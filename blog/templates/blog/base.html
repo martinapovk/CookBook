@@ -1,0 +1,47 @@
+{% load static %}
+<html>
+    <head>
+        <title>Tasty and healthy</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+            <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+			<link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+			<link rel="stylesheet" href="{% static 'css/style.css' %}">
+			<!-- <link rel="stylesheet" href="{% static 'css/blog.css' %}"> -->
+    </head>
+    <body>
+	    <div class="page-header">
+            <center>
+				  <a href="#"><img align = "center" src="{% static 'images/bannerr.jpg' %}" alt=""/></a>
+            </center>
+			<center><br>
+                <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+                    <ul class="nav navbar-nav" style="display:inline">
+                        <li class="rd-nav-item active" style = "display:inline-block">
+                            <a class="rd-nav-link"  href="/">На головну</a>
+                        </li>
+                        <li class="rd-nav-item" style = "display:inline-block">
+                            <a class="rd-nav-link"  href="{% url 'about' %}">ПРО АВТОРІВ</a>
+                        </li>
+                        <li class="rd-nav-item" style = "display:inline-block">
+                            <a class="rd-nav-link" s href="{% url 'post_list' %}">Всі рецепти</a>
+                        </li>
+                        <li class="rd-nav-item" style = "display:inline-block">
+                            <a href="{% url 'post_new' %}" class="rd-nav-link" ">
+                                <span class="glyphicon glyphicon-plus"></span>
+                                    ДОДАТИ РЕЦЕПТ
+                                <span class="glyphicon glyphicon-plus"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </center>
+            <h1 align="center"><a href="/">Tasty and healthy!</a></h1>
+        </div>
+        <div class="content container">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+</html>
